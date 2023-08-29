@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <small>
       <a
-        href="https://github.com/Bancy614/weatherReactApp"
+        href="https://github.com/Bancy614/weather-app-bancy-react/pull/1"
         target="_blank"
         rel="noreferrer"
       >
