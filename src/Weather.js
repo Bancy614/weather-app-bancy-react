@@ -53,14 +53,17 @@ if (weatherData.ready){
            <li>
                 <FormattedDate date={weatherData.date} />
            </li>
+           <li className="text-capitalize description" >{weatherData.description}</li>
            
             <li>
                 <span>
-                <img src={`https://openweathermap.org/img/wn/${weatherData.icon}@2x.png`} alt={weatherData.description} className="img-fluid" />
+                    <img src={`https://openweathermap.org/img/wn/${weatherData.icon}@2x.png`} alt={weatherData.description} className="img-fluid" />
                 </span>
                 <span>
-                    <WeatherTemperature celcius={weatherData.temperature} /> </span> </li>
-            <li className="text-capitalize description" >{weatherData.description}</li>
+                    <WeatherTemperature celcius={weatherData.temperature} /> </span>
+                
+            </li>
+            
             <li >Humidity:<span className="humidity">{weatherData.humidity}%</span></li>
             <li>Wind:<span className="wind">{Math.round(weatherData.wind)}Km/h</span></li>
            </ul>

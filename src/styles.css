@@ -13,11 +13,11 @@
 .Weather{
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  /* border: 1px solid #dadde1; */
+  border: 1px solid #739AFC;
   border-radius: 4px;
   padding:16px;
   margin: 0 12px;
-  /* box-shadow: 2px 2px #dadde1;  */
+  box-shadow: 2px  #739AFC; 
   width: auto;
 }
 .App h1 {
@@ -36,7 +36,7 @@
   color: blue;
 }
 .temperature{
-  font-size: 56px;
+  font-size: 64px;
   font-weight: 500;
   line-height: 40px;
   
