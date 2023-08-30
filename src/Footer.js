@@ -3,7 +3,7 @@ import "./styles.css";
 
 export default function Footer() {
   return (
-    <small>
+    <small className="Footer" >
       <a
         href="https://github.com/Bancy614/weather-app-bancy-react/pull/1"
         target="_blank"
