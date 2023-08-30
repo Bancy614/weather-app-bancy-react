@@ -1,5 +1,8 @@
 import React, {useState} from "react";
 import axios from "axios";
+import WeatherTemperature from "./WeatherTemperature";
+import FormattedDate from "./FormattedDate";
+    
 
 export default function Weather(props){
     const[weatherData, setWeatherData]=useState({ready:false});
@@ -47,14 +50,16 @@ if (weatherData.ready){
            </form>
            <h3 className="mt-2" >{city}</h3>
            <ul>
-           {/* <li>to add date</li> */}
+           <li>
+                <FormattedDate date={weatherData.date} />
+           </li>
            
             <li>
                 <span>
                 <img src={`https://openweathermap.org/img/wn/${weatherData.icon}@2x.png`} alt={weatherData.description} className="img-fluid" />
                 </span>
-                <span className="temperature" >{Math.round(weatherData.temperature)}</span>
-                <span className="unit" >°C </span></li>
+                <span>
+                    <WeatherTemperature celcius={weatherData.temperature} /> </span> </li>
             <li className="text-capitalize description" >{weatherData.description}</li>
             <li >Humidity:<span className="humidity">{weatherData.humidity}%</span></li>
             <li>Wind:<span className="wind">{Math.round(weatherData.wind)}Km/h</span></li>
