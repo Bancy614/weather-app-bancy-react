@@ -6,7 +6,14 @@
     rgb(115, 154, 252) 0%,
     rgb(139, 102, 241) 100%
   );
+  max-width: 600px;
+  margin: 30px auto;
 }
 h1 {
   color: blue;
+}
+.Footer{
+  font-size: 12px;
+  margin: 10px 0;
+ 
 }
