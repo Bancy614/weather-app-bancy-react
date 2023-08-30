@@ -39,31 +39,25 @@ if (weatherData.ready){
     return(
         <div className="Weather">
             <form onSubmit={handleSubmit} >
-                <div className="row">
-                <div className="col-9">
-                    <input type="search" onChange={changeCity} placeholder="Type a city..." autoFocus="on" autoComplete={false} />
-                </div>
-
-                <div className="col-3" >
-                    <input type="submit" value="Search" className="btn btn-primary" />
-                </div>
-
-                </div>
                 
+                <input type="search" onChange={changeCity} placeholder="Type a city..." autoFocus="on" autoComplete={false} />
+             
+                <input type="submit" value="Search" className="btn btn-primary" />
+               
            </form>
-           <h2>{city}</h2>
+           <h3 className="mt-2" >{city}</h3>
            <ul>
            {/* <li>to add date</li> */}
            
             <li>
                 <span>
-                <img src={`https://openweathermap.org/img/wn/${weatherData.icon}@2x.png`} alt={weatherData.description} />
+                <img src={`https://openweathermap.org/img/wn/${weatherData.icon}@2x.png`} alt={weatherData.description} className="img-fluid" />
                 </span>
-                <span className="celcius" >Temperature:{Math.round(weatherData.temperature)}</span>
+                <span className="temperature" >{Math.round(weatherData.temperature)}</span>
                 <span className="unit" >°C </span></li>
-            <li>Description:{weatherData.description}</li>
-            <li>Humidity:{weatherData.humidity}%</li>
-            <li>Wind:{Math.round(weatherData.wind)}Km/h</li>
+            <li className="text-capitalize description" >{weatherData.description}</li>
+            <li >Humidity:<span className="humidity">{weatherData.humidity}%</span></li>
+            <li>Wind:<span className="wind">{Math.round(weatherData.wind)}Km/h</span></li>
            </ul>
         </div>
     );
