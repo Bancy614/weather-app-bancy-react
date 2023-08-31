@@ -4,9 +4,9 @@ import WeatherTemperature from "./WeatherTemperature";
 import FormattedDate from "./FormattedDate";
     
 
-export default function Weather(props){
+export default function Weather(){
     const[weatherData, setWeatherData]=useState({ready:false});
-    const[city, setCity]=useState(props.defaultCity);
+    const[city, setCity]=useState("");
 
     function handleSubmit(event){
         event.preventDefault();
@@ -38,41 +38,57 @@ export default function Weather(props){
 
      }
 
-if (weatherData.ready){
+
     return(
-        <div className="Weather">
-            <form onSubmit={handleSubmit} >
-                
-                <input type="search" onChange={changeCity} placeholder="Type a city..." autoFocus="on" autoComplete={false} />
-             
-                <input type="submit" value="Search" className="btn btn-primary" />
+        <div class="container">
+            <div class="card">
+            <div class="wrapper">
+            <div className="Weather">
+           
+           <form  onSubmit={handleSubmit}  >
+                 
+               <input type="search" onChange={changeCity} placeholder="Type a city..." className="d-flex" autoFocus="on" autoComplete={false} />
+               
+               <input type="submit" value="Search" />  
                
            </form>
-           <h3 className="mt-2" >{city}</h3>
-           <ul>
-           <li>
-                <FormattedDate date={weatherData.date} />
-           </li>
-           <li className="text-capitalize description" >{weatherData.description}</li>
-           
-            <li>
-                <span>
-                    <img src={`https://openweathermap.org/img/wn/${weatherData.icon}@2x.png`} alt={weatherData.description} className="img-fluid" />
-                </span>
-                <span>
-                    <WeatherTemperature celcius={weatherData.temperature} /> </span>
-                
-            </li>
-            
-            <li >Humidity:<span className="humidity">{weatherData.humidity}%</span></li>
-            <li>Wind:<span className="wind">{Math.round(weatherData.wind)}Km/h</span></li>
-           </ul>
-        </div>
-    );
+             
+      {weatherData.ready &&(
+           <div>
+               <h3 className="mt-2" >{city}</h3>
+               <ul>
+               <li>
+                       <FormattedDate date={weatherData.date} />
+               </li>
+               <li className="text-capitalize description" >{weatherData.description}</li>
+               
+                   <li>
+                       <span>
+                           <img src={`https://openweathermap.org/img/wn/${weatherData.icon}@2x.png`} alt={weatherData.description} className="img-fluid" />
+                       </span>
+                       <span>
+                           <WeatherTemperature celcius={weatherData.temperature} /> </span>
+                       
+                   </li>
+                   
+                   <li >Humidity:<span className="humidity">{weatherData.humidity}%</span></li>
+                   <li>Wind:<span className="wind">{Math.round(weatherData.wind)}Km/h</span></li>
+               </ul>
+           </div>
 
-}else{
-    search()
-    return "Loading ..."
-}
-    
+        )}
+  
+   </div>
+
+            </div>
+
+            </div>
+
+        </div>
+        
+          
+            
+        
+  );        
+     
 }

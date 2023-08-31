@@ -3,34 +3,63 @@
   text-align: center;
   background: linear-gradient(
     90deg,
-    rgb(115, 154, 252) 10%,
-    rgb(139, 102, 241) 90%
+    rgb(115, 228, 252) 0%,
+    rgb(139, 102, 241) 100%
   );
   max-width: 600px;
+  min-width:322px;
   margin: 30px auto;
   padding: 16px;
+}
+.container {
+  padding: 0px;
+  margin: 40px auto;
+}
+.card {
+  background: linear-gradient(
+    90deg,
+    rgb(115, 228, 252) 0%,
+    rgb(139, 102, 241) 100%
+  );
+  padding: 30px;
+  max-width: 580px;
 }
 .Weather{
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  border: 1px solid #739AFC;
-  border-radius: 4px;
   padding:16px;
   margin: 0 12px;
   box-shadow: 2px  #739AFC; 
   width: auto;
+
 }
 .App h1 {
   color: blue;
   font-weight: 600;
-  
 }
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:auto;
+}
+input[type="search"] {
+    width: auto;
+    font-size: 16px;
+  }
+  input[type="submit"] {
+    width: auto;
+    font-size: 16px;
+  }
+
 .Footer{
   font-size: 13px;
   margin: 10px 0;
+
 }
 .Footer a{
-  color: white;
+  color: black;
+  opacity: 0.6;
 }
 .Footer a:hover{
   color: blue;
@@ -39,6 +68,7 @@
   font-size: 64px;
   font-weight: 500;
   line-height: 40px;
+  width: auto;
   
 }
 .unit{
@@ -62,6 +92,47 @@ li{
 .WeatherTemperature a{
   text-decoration: none;
 }
+
+@media (max-width: 700px) {
+  form {
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+  input [type="search"] {
+    width: 80px;
+    font-size: 12px;
+    max-width: 50px;
+  }
+  input [type="submit"]{
+    font-size: 12px;
+  }
+  .temperature{
+  font-size: 40px;
+  font-weight: 500;
+  line-height:34px;
+  width: auto;
+  
+}
+.unit{
+  font-size: 12px;
+  font-weight: 400;
+  position: relative;
+  top: -22px;
+}
+li{
+ 
+  line-height: 20px;
+  font-size: 14px;
+}
+    
+}
+  
+   
+  
+
+
+    
 
 
 
