@@ -112,7 +112,6 @@ li{
   font-weight: 500;
   line-height:34px;
   width: auto;
-  
 }
 .unit{
   font-size: 12px;
@@ -121,11 +120,17 @@ li{
   top: -22px;
 }
 li{
- 
   line-height: 20px;
   font-size: 14px;
 }
     
+}
+.WeatherForecast{
+  text-align: center;
+}
+.weatherTemperature-min{
+  opacity: 0.6;
+  margin-left: 5px;
 }
   
    
