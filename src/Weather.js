@@ -41,7 +41,6 @@ export default function Weather(){
 
      }
 
-
     return(
         <div class="container">
             <div class="card">
@@ -50,7 +49,7 @@ export default function Weather(){
            
            <form  onSubmit={handleSubmit}  >
                  
-               <input type="search" onChange={changeCity} placeholder="Type a city..." className="d-flex" autoFocus="on" autoComplete={false} />
+               <input type="search" onChange={changeCity} placeholder="Type a city..." className="d-flex" autoFocus="on" autoComplete="off" required/>
                
                <input type="submit" value="Search" />  
                
@@ -62,14 +61,14 @@ export default function Weather(){
                <h3 className="mt-2" >{city}</h3>
                <ul>
                <li>
-                       <FormattedDate date={weatherData.date} />
+                    <FormattedDate date={weatherData.date} />
                </li>
                <li className="text-capitalize description" >{weatherData.description}</li>
                
                    <li>
                    <span>
                            <Weathericon icon={weatherData.icon} />
-                           {/* <img src={`https://openweathermap.org/img/wn/${weatherData.icon}@2x.png`} alt={weatherData.description} className="img-fluid" /> */}
+                           
                        </span>
                        <span>
                            <WeatherTemperature celcius={weatherData.temperature} /> </span>
