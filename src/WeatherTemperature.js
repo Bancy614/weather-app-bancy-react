@@ -17,8 +17,6 @@ export default function WeatherTemperature(props){
         return(props.celcius*9)/5 + 32;
     }
 
-
-    
     if (unit==="celcius"){
         return(
             <div className="WeatherTemperature" >

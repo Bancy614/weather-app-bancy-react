@@ -1,2 +1,2 @@
 # weather-app-bancy-react
-Created with CodeSandbox
+Created with CodeSandbox, react
