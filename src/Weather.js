@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import axios from "axios";
 import WeatherTemperature from "./WeatherTemperature";
 import FormattedDate from "./FormattedDate";
+import WeatherForecast from "./WeatherForecast";
     
 
 export default function Weather(){
@@ -22,6 +23,7 @@ export default function Weather(){
         setWeatherData({
             ready:true,
             temperature:response.data.main.temp,
+            coordinates:response.data.coord,
             humidity:response.data.main.humidity,
             city:response.data.name,
             date:new Date(response.data.dt*1000),
@@ -31,7 +33,7 @@ export default function Weather(){
         });
     }
      function search(){
-        const apiKey="a4ba73c43b7f0b69291107044ef46ca6"
+        const apiKey="6f578b96aa9505bcce148ac22cb85794"
         let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
        
         axios.get(apiUrl).then(showWeather);
@@ -52,6 +54,7 @@ export default function Weather(){
                <input type="submit" value="Search" />  
                
            </form>
+          
              
       {weatherData.ready &&(
            <div>
@@ -74,15 +77,20 @@ export default function Weather(){
                    <li >Humidity:<span className="humidity">{weatherData.humidity}%</span></li>
                    <li>Wind:<span className="wind">{Math.round(weatherData.wind)}Km/h</span></li>
                </ul>
+               <WeatherForecast coordinates={weatherData.coordinates} />
+               
            </div>
+          
 
         )}
+        
   
    </div>
 
             </div>
 
             </div>
+           
 
         </div>
         
