@@ -3,6 +3,7 @@ import axios from "axios";
 import WeatherTemperature from "./WeatherTemperature";
 import FormattedDate from "./FormattedDate";
 import WeatherForecast from "./WeatherForecast";
+import Weathericon from "./WeatherIcon";
     
 
 export default function Weather(){
@@ -66,8 +67,9 @@ export default function Weather(){
                <li className="text-capitalize description" >{weatherData.description}</li>
                
                    <li>
-                       <span>
-                           <img src={`https://openweathermap.org/img/wn/${weatherData.icon}@2x.png`} alt={weatherData.description} className="img-fluid" />
+                   <span>
+                           <Weathericon icon={weatherData.icon} />
+                           {/* <img src={`https://openweathermap.org/img/wn/${weatherData.icon}@2x.png`} alt={weatherData.description} className="img-fluid" /> */}
                        </span>
                        <span>
                            <WeatherTemperature celcius={weatherData.temperature} /> </span>
